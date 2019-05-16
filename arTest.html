@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta name="theme-color" content="#98c222">
+    <!-- <link rel="stylesheet" type="text/css" href="css/index.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="asset/leaflet/leaflet.css">
+    <link rel="stylesheet" type="text/css" href="css/fa.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/images-compare.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/fa.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="js/jquery-mobile/jquery.mobile-1.4.5.min.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/main.css"> -->
+    <!-- <link rel="manifest" href="manifest.json"> -->
+    <!-- <script type="text/javascript" src="cordova.js"></script> -->
+    <!-- <script type="text/javascript" src="cache-polyfill.js"></script> -->
+    <script type="text/javascript" src="asset/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="js/jquery.images-compare.js"></script> -->
+    <script type="text/javascript" src="asset/hammer.min.js"></script>
+    <script type="text/javascript" src="asset/bootstrap.min.js"></script>
+    <script type="text/javascript" src="asset/aframe.min.js"></script>
+    <script type="text/javascript" src="asset/aframe-ar.js"></script>
+    <!-- <script type="text/javascript" src="asset/leaflet/leaflet.js"></script> -->
+    <!-- <script type="text/javascript" src="js/map.js"></script> -->
+    <!-- <script type="text/javascript" src="asset/lozad.min.js"></script> -->
+    <!-- <link rel="shortcut icon" href="img/ico/favicon.ico"> -->
+    <title>VirtualArch - Ecomuseo dell'Argentario</title>
+
+  </head>
+  <body>
+    <a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+      <a-marker type='barcode' value='0'>
+        <a-entity collada-model="url(model/martello2.dae)">
+          <a-animation attribute="rotation" to="360 360 360" dur="10000" easing='linear' repeat="indefinite"></a-animation>
+        </a-entity>
+      </a-marker>
+      <a-marker type='barcode' value='1'>
+        <a-entity collada-model="url(model/vaschetta.dae)">
+          <a-animation attribute="rotation" to="360 360 360" dur="10000" easing='linear' repeat="indefinite"></a-animation>
+        </a-entity>
+      </a-marker>
+      <a-marker type='barcode' value='2'>
+        <a-entity collada-model="url(model/pala2.dae)">
+          <a-animation attribute="rotation" to="360 360 360" dur="10000" easing='linear' repeat="indefinite"></a-animation>
+        </a-entity>
+      </a-marker>
+      <a-marker type='barcode' value='3'>
+        <a-entity collada-model="url(model/luce2.dae)">
+          <a-animation attribute="rotation" to="360 360 360" dur="10000" easing='linear' repeat="indefinite"></a-animation>
+        </a-entity>
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>

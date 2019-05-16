@@ -29,8 +29,20 @@ window.onload=function(){
     }
   })
 
+  augmentedBtn = L.Control.extend({
+    options: { position: 'topleft'},
+    onAdd: function (map) {
+      var container = L.DomUtil.create('div', 'extentControl leaflet-bar leaflet-control leaflet-touch');
+      btn=$("<a/>",{href:'#'}).appendTo(container);
+      $("<i/>",{class:'fas fa-vr-cardboard'}).appendTo(btn)
+      btn.on('click', function () {window.location.href='arTest.html'});
+      return container;
+    }
+  })
+
   map.addControl(new startView());
   map.addControl(new geoLocBtn());
+  map.addControl(new augmentedBtn());
 }
 function getLocation(){
   map.locate({setView: true, maxZoom: 18, watch:true, timeout: 60000,enableHighAccuracy:true});
@@ -41,33 +53,3 @@ function onLocationFound(e) {
   L.marker(e.latlng).addTo(map);
   L.circle(e.latlng, radius).addTo(map);
 }
-// function getLocation() {
-//   var options = { enableHighAccuracy: true, maximumAge : 60000, timeout : 45000};
-//   if (navigator.geolocation) {
-//     navigator.geolocation.getCurrentPosition(showPosition,showError, options);
-//     // navigator.geolocation.watchPosition(showPosition,showError, options);
-//   } else {
-//     x.innerHTML = "Geolocation is not supported by this browser.";
-//   }
-// }
-//
-// function showPosition(position) {
-//   console.log(position);
-// }
-// function showError(error) {
-//   switch(error.code) {
-//     case error.PERMISSION_DENIED:
-//       errorMsg = "User denied the request for Geolocation."
-//       break;
-//     case error.POSITION_UNAVAILABLE:
-//       errorMsg = "Location information is unavailable."
-//       break;
-//     case error.TIMEOUT:
-//       errorMsg = "The request to get user location timed out."
-//       break;
-//     case error.UNKNOWN_ERROR:
-//       errorMsg = "An unknown error occurred."
-//       break;
-//   }
-//   console.log(errorMsg);
-// }
