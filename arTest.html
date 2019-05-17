@@ -23,53 +23,26 @@
     <title>VirtualArch - Ecomuseo dell'Argentario</title>
   </head>
   <body>
-    <div class="">
-      <div class="row">
-        <div id="frameWrap" class="col-12">
-          <!-- <iframe style="width:100vw;height:100vh;" name="arTest" id="arTest" src="frame.html"></iframe> -->
-        </div>
-        <div id="imageWrap" class="col-12">
-          <ul class="list-group list-group-horizontal imageList">
-            <li class="list-group-item"><img src="model/luce.png" class="img-fluid" alt=""></li>
-            <li class="list-group-item"><img src="model/martello.png" class="img-fluid" alt=""></li>
-            <li class="list-group-item"><img src="model/pala.png" class="img-fluid" alt=""></li>
-            <li class="list-group-item"><img src="model/vaschetta.png" class="img-fluid" alt=""></li>
-          </ul>
-        </div>
-      </div>
+    <div id="frameWrap" class="col-12">
+      <iframe name="arTest" id="arTest" src="frame.html"></iframe>
+    </div>
+    <div id="imageWrap">
+      <div><img src="model/luce.png" class="img-fluid model" data-model="luce2"></div>
+      <div><img src="model/martello.png" class="img-fluid model" data-model="martello2"></div>
+      <div><img src="model/pala.png" class="img-fluid model" data-model="pala2"></div>
+      <div><img src="model/vaschetta.png" class="img-fluid model" data-model="vaschetta"></div>
     </div>
     <script type="text/javascript">
-      // imgWrap = $("#imageWrap").height();
-      // $("#frameWrap").css({"height":screen.height - imgWrap+"px"})
+      $(".model").on('click',function(){
+        model = $(this).data('model')
+        loadObject(model)
+      })
 
-      window.addEventListener("load", function(event) { gui() });
-      window.addEventListener("orientationchange", function() {
-        window.setTimeout(function() { gui() }, 200);
-      }, false);
-
-      function loadObject(url) {
+      function loadObject(model) {
         var iFrame = document.getElementById("arTest");
-        iFrame.contentWindow.postMessage(url, '*');
+        iFrame.contentWindow.postMessage(model, '*');
       }
 
-      function gui(){
-        console.log(screen.height);
-        angle = screen.orientation.angle
-        imgWrap = $("#imageWrap").height();
-        console.log(imgWrap);
-        if (angle == 0) {
-          $(".imageList").addClass('list-group-horizontal')
-          $("#imageWrap").removeClass('col-3').addClass('col-12')
-          $("#frameWrap").css({"height":screen.height - imgWrap+"px"})
-          .removeClass('col-9').addClass('col-12')
-        }else {
-          $(".imageList").removeClass('list-group-horizontal')
-          $(".imageList img").css({"width":"100%"})
-          $("#imageWrap").removeClass('col-12').addClass('col-3')
-          $("#frameWrap").css({"height":"100vh"})
-          .removeClass('col-12').addClass('col-9')
-        }
-      }
     </script>
   </body>
 </html>
