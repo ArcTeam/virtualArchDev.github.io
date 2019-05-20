@@ -1,16 +1,22 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
     <!-- <script src="asset/jquery.min.js"></script> -->
+    <!-- <script src="asset/bootstrap.min.js"></script> -->
     <script src="asset/aframe.min.js"></script>
     <script src="asset/aframe-ar.js"></script>
+    <!-- <script src="asset/aframe-preloader-component.min.js"></script> -->
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
     <style media="screen">
       #arjsDebugUIContainer,.a-enter-vr.embedded{display:none;}
     </style>
   </head>
   <body>
     <a-scene embedded arjs='sourceType: webcam;'>
-    <a-marker preset="kanji">
-      <a-entity id="entity">
-        <a-animation attribute="rotation" to="360 360 360" dur="10000" easing='linear' repeat="indefinite"></a-animation>
-      </a-entity>
+      <a-marker type="pattern" url="patt/pattern-logo_va_bw.patt">
+        <a-entity id="entity">
+          <a-animation attribute="rotation" to="360 360 360" dur="10000" easing='linear' repeat="indefinite"></a-animation>
+        </a-entity>
       </a-marker>
      <a-entity camera></a-entity>
     </a-scene>
@@ -21,3 +27,4 @@
       });
     </script>
   </body>
+<html/>
