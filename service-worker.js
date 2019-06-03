@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.0408727c8767171af66d711d1abe5252.js"
+  "/virtualArchDev.github.io/precache-manifest.9f63b1d7f64ee4a36b099afe67ffe7aa.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "virtual-arch"});
