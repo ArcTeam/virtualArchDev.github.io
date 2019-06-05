@@ -1,4 +1,4 @@
-# app
+# model
 
 ## Project setup
 ```
